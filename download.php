@@ -12,7 +12,7 @@ if (empty($name)) {
 $final_name = $name . "." . $format;
 
 // Content, loads from a string in the program
-$file_content = file_get_contents('empty_webpage/index.txt');
+$file_content = file_get_contents('basic_html/index.txt');
 
 // Create a gz file
 // First, goes to the file temporary directory

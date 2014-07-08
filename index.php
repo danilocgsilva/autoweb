@@ -14,12 +14,12 @@ require_once('vars.php');
       <h1><?php echo $name ?></h1>
       <div id="body">
 
-        <select name="selecttask" form="form_download" size="12">
-          <option value="emptyhtml">Basic HTML</option>
+        <select class="inlineblock" name="selecttask" form="form_download" size="12">
+          <option value="emptyhtml" selected="selected">Basic HTML</option>
           <option value="wp_plugin">WordPress plugin</option>
         </select>
 
-        <form id="form_download" name="download" method="GET" action="download.php">
+        <form id="form_download" class="inlineblock" name="download" method="GET" action="download.php">
           <input type="radio" name="format" value="html" checked>html
           <input type="radio" name="format" value="php">php<br />
           <input type="text" name="name" />
