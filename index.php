@@ -18,6 +18,8 @@ require_once('vars.php');
           <input type="text" name="name" />
           <input type="submit" value="Cria" />
         </form>
+        <div id="code">
+        </div>
       </div> <!-- body's end -->
     </div>
 

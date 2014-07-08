@@ -14,17 +14,19 @@ $final_name = $name . "." . $format;
 // Content, loads from a string in the program
 $file_content = file_get_contents('empty_webpage/index.txt');
 
-// Saves the file before zipping
-$fp = fopen('files/tmp/' . $final_name, 'w');
-fwrite($fp, $file_content);
-fclose($fp);
+// Create a gz file
+// First, goes to the file temporary directory
+chdir('files/tmp/');
+$gzfp = gzopen($final_name . '.gz', 'w5');
+gzwrite($gzfp, $file_content);
+gzclose($gzfp);
 
-// Zip file
-$zip = new ZipArchive;
-$zip->open('files/tmp/' . $final_name . ".zip", ZipArchive::CREATE);
-$zip->addFile('files/tmp/' . $final_name);
-$zip->close();
+
+// Final tasks
 
 header("Content-type: text/plain; charset=utf-8");
-header("Content-disposition: attachment; filename=\"" . $final_name . "\"");
+header("Content-disposition: attachment; filename=\"" . $final_name . ".gz\"");
+readfile($final_name . '.gz');
 
+// Deletes the temporary file in the server
+unlink($final_name . '.gz');
