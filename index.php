@@ -7,6 +7,7 @@ require_once('vars.php');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php print $name ?></title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
@@ -15,8 +16,8 @@ require_once('vars.php');
       <div id="body">
 
         <select class="inlineblock" name="selecttask" form="form_download" size="12">
-          <option value="emptyhtml" selected="selected">Basic HTML</option>
-          <option value="wp_plugin">WordPress plugin</option>
+          <option onclick="javascript:clearselect();" value="emptyhtml" selected="selected">Basic HTML</option>
+          <option onclick="javascript:fillPanelWPPlugin();" value="wp_plugin">WordPress plugin</option>
         </select>
 
         <form id="form_download" class="inlineblock" name="download" method="GET" action="download.php">
