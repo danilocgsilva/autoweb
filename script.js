@@ -24,5 +24,9 @@ function fillPanelBasivHTML() {
   }
   xmlhttp.open("GET", "basic_html/panel.php", true);
   xmlhttp.send();
+}
 
+function changeMedia() {
+  alert(document.getElementByName('selecttask').value);
+  alert('hoho');
 }

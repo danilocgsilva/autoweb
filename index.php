@@ -15,7 +15,7 @@ require_once('vars.php');
       <h1><?php echo $name ?></h1>
       <div id="body">
 
-        <select class="inlineblock" name="selecttask" form="form_download" size="12">
+        <select class="inlineblock" name="selecttask" form="form_download" size="12" onchange="javascript:changeMedia()">
           <option onclick="javascript:fillPanelBasivHTML();" value="emptyhtml" selected="selected">Basic HTML</option>
           <option onclick="javascript:fillPanelWPPlugin();" value="wp_plugin">WordPress plugin</option>
         </select>
