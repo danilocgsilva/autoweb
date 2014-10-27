@@ -26,7 +26,9 @@ function fillPanelBasivHTML() {
   xmlhttp.send();
 }
 
+/*
 function changeMedia() {
   alert(document.getElementByName('selecttask').value);
   alert('hoho');
 }
+*/

@@ -15,20 +15,21 @@ require_once('vars.php');
       <h1><?php echo $name ?></h1>
       <div id="body">
 
-        <select class="inlineblock" name="selecttask" form="form_download" size="12" onchange="javascript:changeMedia()">
+        <select class="inlineblock" name="selecttask" form="form_download" size="12">
           <option onclick="javascript:fillPanelBasivHTML();" value="emptyhtml" selected="selected">Basic HTML</option>
           <option onclick="javascript:fillPanelWPPlugin();" value="wp_plugin">WordPress plugin</option>
         </select>
 
         <form id="form_download" class="inlineblock" name="download" method="GET" action="download.php">
-          <input type="radio" name="format" value="html" checked>html
-          <input type="radio" name="format" value="php">php<br />
-          <input type="text" name="name" />
-          <input type="submit" value="Cria" />
+
         </form>
 
       </div> <!-- body's end -->
     </div>
 
-	</body>
+    <script>
+      fillPanelBasivHTML();
+    </script>
+    
+  </body>
 </html>
