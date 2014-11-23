@@ -16,19 +16,21 @@ require_once('vars.php');
       <div id="body">
 
         <select class="inlineblock" name="selecttask" form="form_download" size="12">
-          <option onclick="javascript:fillPanelBasivHTML();" value="emptyhtml" selected="selected">Basic HTML</option>
-          <option onclick="javascript:fillPanelWPPlugin();" value="wp_plugin">WordPress plugin</option>
+          <option onclick="javascript:fillPanel('basic_html');" value="emptyhtml" selected="selected">Basic HTML</option>
+          <option onclick="javascript:fillPanel('basic_html2');" value="emptyhtml2">Basic HTML 2</option>
+          <option onclick="javascript:fillPanel('wordpress_plugin');" value="wp_plugin">WordPress plugin</option>
         </select>
 
         <form id="form_download" class="inlineblock" name="download" method="GET" action="download.php">
-
+          <div id="dynamic_content"></div>
+          <input type="hidden" name="chunk" id="chunk" />
         </form>
 
       </div> <!-- body's end -->
     </div>
 
     <script>
-      fillPanelBasivHTML();
+      fillPanel('basic_html');
     </script>
     
   </body>
