@@ -1,16 +1,16 @@
 <?php
 
-$name = $_GET['name'];
 $format = $_GET['format'];
-$chunk = $_GET['chunk'];
 
-// Provides default value for empty name's form
-if (empty($name)) {
-  $name = 'index';
+// Loads the function to create the machine name
+require_once('functions/machine_name.php');
+
+// Sets the machine_name, if not setted by the user trough format
+if (isset($_GET['module_machine_name'])) {
+	$machine_name = $_GET['module_machine_name'];
+} else {
+	$machine_name = machine_name($name);
 }
-
-// Provides the final name of the file
-$final_name = $name . "." . $format;
 
 // Content, loads from a string in the program
 $file_content = file_get_contents($chunk . '/index.txt');

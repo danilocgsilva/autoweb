@@ -3,7 +3,7 @@ $drupal_module = <<<CODE
 <label for="module_name">Module name: </label>
 <input id="module_name" type="text" /><br /><br />
 <label for="module_machine_name">(Optional) Machine name:</label>
-<input type="module_machine_name" type="text" /><br /><br />
+<input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
 <div>Module description:</div>
 <textarea form="form_download" rows="3" cols="61"></textarea><br />
 <input type="submit" value="Downloads" />

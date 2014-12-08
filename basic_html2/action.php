@@ -1,8 +1,6 @@
 <?php
 
-$name = $_GET['name'];
 $format = $_GET['format'];
-$chunk = $_GET['chunk'];
 
 // Provides default value for empty name's form
 if (empty($name)) {
