@@ -19,7 +19,7 @@ require_once('vars.php');
           <option onclick="javascript:fillPanel('basic_html');" value="emptyhtml" selected="selected">Basic HTML</option>
           <option onclick="javascript:fillPanel('basic_html2');" value="emptyhtml2">Basic HTML 2</option>
           <option onclick="javascript:fillPanel('wordpress_plugin');" value="wp_plugin">WordPress plugin</option>
-          <option onclick="javascript:fillPanel('drupal_module');" value="drupal_module">Drupal Module</option>
+          <option onclick="javascript:fillPanel('drupal_module');" value="drupal_module">WordPress plugin</option>
         </select>
 
         <form id="form_download" class="inlineblock" name="download" method="GET" action="download.php">
