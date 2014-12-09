@@ -13,9 +13,9 @@ if (isset($_GET['module_machine_name'])) {
 }
 
 // Content, loads from a string in the program
-$file_content = file_get_contents($chunk . '/index.txt');
+$file_content = file_get_contents($chunk . '/infobase.txt');
 
-error_log($file_content);
+
 
 header("Content-type: text/plain; charset=utf-8");
 header("Content-disposition: attachment; filename=\"" . $final_name);

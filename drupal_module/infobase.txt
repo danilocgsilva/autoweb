@@ -1,0 +1,4 @@
+;$Id;
+name = %s
+description = %s
+core = 7.x
