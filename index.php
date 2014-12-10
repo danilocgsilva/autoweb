@@ -17,10 +17,10 @@ require_once('vars_bootstrap.php');
       <div id="body">
 
         <select class="inlineblock" name="selecttask" form="form_download" size="12">
-          <option onclick="javascript:switchScreen();" value="emptyhtml" selected="selected">Basic HTML</option>
-          <option onclick="javascript:switchScreen();" value="emptyhtml2">Basic HTML 2</option>
+          <option onclick="javascript:switchScreen('basic_html');" value="basic_html" selected="selected">Basic HTML</option>
+          <option onclick="javascript:switchScreen('basic_html_2');" value="basic_html_2">Basic HTML 2</option>
           <option onclick="javascript:switchScreen();" value="wp_plugin">WordPress plugin</option>
-          <option onclick="javascript:switchScreen();" value="drupal_module">Drupal Module</option>
+          <option onclick="javascript:switchScreen('drupal_module');" value="drupal_module">Drupal Module</option>
         </select>
 
         <form id="basic_html" class="inlineblock" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
@@ -55,10 +55,6 @@ require_once('vars_bootstrap.php');
 
       </div> <!-- body's end -->
     </div>
-
-    <script>
-      fillPanel('basic_html');
-    </script>
     
   </body>
 </html>
