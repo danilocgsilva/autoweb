@@ -1,3 +1,6 @@
+<?php
+
+$basic_html_2 = <<<CODE
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,4 +12,4 @@
       
   </body>
 </html>
-
+CODE;

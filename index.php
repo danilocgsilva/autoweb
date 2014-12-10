@@ -7,7 +7,6 @@ require_once('vars_bootstrap.php');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php print $name ?></title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
@@ -30,6 +29,16 @@ require_once('vars_bootstrap.php');
 			<input type="submit" value="Cria" /><br />
 			<textarea cols="100" rows="12">
 <?php echo $basic_html ?>
+			</textarea>
+        </form>
+        
+        <form id="basic_html_2_download" class="inlineblock" name="basic_html_2_download" method="GET" action="includes/basic_html_2_download.php">
+			<input type="radio" name="format" value="html" checked>html
+			<input type="radio" name="format" value="php">php<br />
+			<input type="text" name="name" />
+			<input type="submit" value="Cria" /><br />
+			<textarea cols="100" rows="12">
+<?php echo $basic_html_2 ?>
 			</textarea>
         </form>
 

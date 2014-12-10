@@ -10,12 +10,10 @@ if (empty($name)) {
 // Provides the final name of the file
 $final_name = $name . "." . $format;
 
-// Content, loads from a string in the program
-$file_content = file_get_contents($chunk . '/index.txt');
-
-error_log($file_content);
+// Loads the basic html variable
+require_once('../includes/basic_html_2_variable.php');
 
 header("Content-type: text/plain; charset=utf-8");
 header("Content-disposition: attachment; filename=\"" . $final_name);
 
-echo $file_content;
+echo $basic_html_2;
