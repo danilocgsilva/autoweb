@@ -1,5 +1,5 @@
 <?php
-require_once('vars.php');
+require_once('vars_bootstrap.php');
 ?>
 <!DOCTYPE xml:lang="pt-br" lang="pt-br" html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +12,8 @@ require_once('vars.php');
 
   <body>
     <div id="wrapper">
-      <h1><?php echo $name ?></h1>
+      <h1>Autoweb</h1>
+	  
       <div id="body">
 
         <select class="inlineblock" name="selecttask" form="form_download" size="12">
@@ -22,9 +23,14 @@ require_once('vars.php');
           <option onclick="javascript:fillPanel('drupal_module');" value="drupal_module">Drupal Module</option>
         </select>
 
-        <form id="form_download" class="inlineblock" name="download" method="GET" action="download.php">
-          <div id="dynamic_content"></div>
-          <input type="hidden" name="chunk" id="chunk" />
+        <form id="basic_html_download" class="inlineblock" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
+			<input type="radio" name="format" value="html" checked>html
+			<input type="radio" name="format" value="php">php<br />
+			<input type="text" name="name" />
+			<input type="submit" value="Cria" /><br />
+			<textarea cols="100" rows="12">
+<?php echo $basic_html ?>
+			</textarea>
         </form>
 
       </div> <!-- body's end -->
