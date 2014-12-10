@@ -7,6 +7,7 @@ require_once('vars_bootstrap.php');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><?php print $name ?></title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
   </head>
 
   <body>
@@ -16,30 +17,40 @@ require_once('vars_bootstrap.php');
       <div id="body">
 
         <select class="inlineblock" name="selecttask" form="form_download" size="12">
-          <option onclick="javascript:fillPanel('basic_html');" value="emptyhtml" selected="selected">Basic HTML</option>
-          <option onclick="javascript:fillPanel('basic_html2');" value="emptyhtml2">Basic HTML 2</option>
-          <option onclick="javascript:fillPanel('wordpress_plugin');" value="wp_plugin">WordPress plugin</option>
-          <option onclick="javascript:fillPanel('drupal_module');" value="drupal_module">Drupal Module</option>
+          <option onclick="javascript:switchScreen();" value="emptyhtml" selected="selected">Basic HTML</option>
+          <option onclick="javascript:switchScreen();" value="emptyhtml2">Basic HTML 2</option>
+          <option onclick="javascript:switchScreen();" value="wp_plugin">WordPress plugin</option>
+          <option onclick="javascript:switchScreen();" value="drupal_module">Drupal Module</option>
         </select>
 
-        <form id="basic_html_download" class="inlineblock" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
-			<input type="radio" name="format" value="html" checked>html
-			<input type="radio" name="format" value="php">php<br />
-			<input type="text" name="name" />
-			<input type="submit" value="Cria" /><br />
-			<textarea cols="100" rows="12">
+        <form id="basic_html" class="inlineblock" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
+		<input type="radio" name="format" value="html" checked>html
+		<input type="radio" name="format" value="php">php<br />
+		<input type="text" name="name" />
+		<input type="submit" value="Cria" /><br />
+		<textarea cols="100" rows="12">
 <?php echo $basic_html ?>
-			</textarea>
+		</textarea>
         </form>
         
-        <form id="basic_html_2_download" class="inlineblock" name="basic_html_2_download" method="GET" action="includes/basic_html_2_download.php">
-			<input type="radio" name="format" value="html" checked>html
-			<input type="radio" name="format" value="php">php<br />
-			<input type="text" name="name" />
-			<input type="submit" value="Cria" /><br />
-			<textarea cols="100" rows="12">
+        <form id="basic_html_2" class="inlineblock" name="basic_html_2_download" method="GET" action="includes/basic_html_2_download.php">
+		<input type="radio" name="format" value="html" checked>html
+		<input type="radio" name="format" value="php">php<br />
+		<input type="text" name="name" />
+		<input type="submit" value="Cria" /><br />
+		<textarea cols="100" rows="12">
 <?php echo $basic_html_2 ?>
-			</textarea>
+		</textarea>
+        </form>
+        
+        <form id="drupal_module" class="inlineblock" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">
+	  <label for="name">Module name: </label>
+	  <input id="name" name="name" type="text" /><br /><br />
+	  <label for="module_machine_name">(Optional) Machine name:</label>
+	  <input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
+	  <div>Module description:</div>
+	  <textarea form="form_download" rows="3" cols="61"></textarea><br />
+	  <input type="submit" value="Downloads" />
         </form>
 
       </div> <!-- body's end -->
