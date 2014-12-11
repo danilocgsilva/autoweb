@@ -1,3 +1,15 @@
+/* Defaults before javascritp load */
+
+#basic_html {
+  display: inline-block;
+}
+#basic_html_2 {
+  display: none;
+}
+#drupal_module {
+  display: none;
+}
+
 .inlineblock {
   display: inline-block;
   vertical-align: top;
