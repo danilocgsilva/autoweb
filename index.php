@@ -44,13 +44,13 @@ require_once('vars_bootstrap.php');
         </form>
         
         <form id="drupal_module" class="inlineblock" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">
-	  <label for="name">Module name: </label>
-	  <input id="name" name="name" type="text" /><br /><br />
-	  <label for="module_machine_name">(Optional) Machine name:</label>
-	  <input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
-	  <div>Module description:</div>
-	  <textarea form="form_download" rows="3" cols="61"></textarea><br />
-	  <input type="submit" value="Downloads" />
+			<label for="name">Module name: </label>
+			<input id="name" name="name" type="text" /><br /><br />
+			<label for="module_machine_name">(Optional) Machine name:</label>
+			<input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
+			<div>Module description:</div>
+			<textarea form="form_download" rows="3" cols="61"></textarea><br />
+			<input type="submit" value="Downloads" />
         </form>
 
       </div> <!-- body's end -->
