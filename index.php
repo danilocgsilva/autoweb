@@ -1,5 +1,6 @@
 <?php
 require_once('vars_bootstrap.php');
+session_start();
 ?>
 <!DOCTYPE xml:lang="pt-br" lang="pt-br" html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,6 +14,16 @@ require_once('vars_bootstrap.php');
   <body>
     <div id="wrapper">
       <h1>Autoweb</h1>
+	  
+      <?php
+	    if (isset($_SESSION['errors'])) {
+			foreach($_SESSION['errors'] as $error) {
+				echo 'Error: ' . $error . '<br />';
+			}
+		}
+		echo gettype($_SESSION['errors']);
+	  ?>
+	  
 	  
       <div id="body">
 
@@ -49,7 +60,7 @@ require_once('vars_bootstrap.php');
 			<label for="module_machine_name">(Optional) Machine name:</label>
 			<input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
 			<div>Module description:</div>
-			<textarea form="form_download" rows="3" cols="61"></textarea><br />
+			<textarea id="module_description" name="module_description" form="drupal_module" rows="3" cols="61"></textarea><br />
 			<input type="submit" value="Downloads" />
         </form>
 
@@ -58,3 +69,6 @@ require_once('vars_bootstrap.php');
     
   </body>
 </html>
+<?php
+unset($_SESSION['errors']);
+?>
