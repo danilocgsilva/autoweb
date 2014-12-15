@@ -20,6 +20,9 @@ if (!$valid) {
 	$domain = strtolower($domain[0]);
 	$domain_name = split('/', $_SERVER['URL']);
 	$domain .= '://' . $_SERVER['SERVER_NAME'] . '/' . $domain_name[1] . '/';
+	
+	// Set the page source
+	$_SESSION['page_source'] = 'drupal_module';
 
 	header('Location: ' . $domain);
 }

@@ -1,7 +1,7 @@
 <?php
 
 $drupal_module = <<<CODE
-;$Id;
+;\$Id;
 name = %s
 description = %s
 core = 7.x

@@ -1,7 +1,7 @@
 /* Defaults before javascritp load */
 
 #basic_html {
-  display: inline-block;
+  display: none;
 }
 #basic_html_2 {
   display: none;
@@ -13,4 +13,11 @@
 .inlineblock {
   display: inline-block;
   vertical-align: top;
+}
+
+#errorbox {
+  border: 1px solid #f00;
+  background-color: #fcc;
+  color: #a00;
+  margin-bottom: 10px;
 }
