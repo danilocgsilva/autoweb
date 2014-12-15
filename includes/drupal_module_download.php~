@@ -52,7 +52,5 @@ $module_body = sprintf($drupal_module, $module_name, $module_description);
 // The zip file to output
 $zip_file = new ZipArchive;
 
-// Creates a temporary php folder to create and get files
-
 echo $module_name . '<br />' . $module_machine_name . '<br />' . $module_description;
 echo '<br />' . $module_body;
