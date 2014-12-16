@@ -30,13 +30,12 @@ if (!$valid) {
 // Loads the format string drupal module
 require_once('../includes/drupal_module_variable.php');
 
-// Loads the machine_name function
-require_once('../functions/machine_name.php');
-
 // Configure inputs variables
 $module_name = $_GET['name'];
 
 // $module_machine_name
+// Loads the machine_name function
+require_once('../functions/machine_name.php');
 if ($_GET['module_machine_name'] == '') {
 	$module_machine_name = machine_name($module_name);
 } else {
@@ -49,8 +48,15 @@ $module_description = $_GET['module_description'];
 // Text to go on module_name.info
 $module_body = sprintf($drupal_module, $module_name, $module_description);
 
-// The zip file to output
-$zip_file = new ZipArchive;
+// Path to put the temporary files
+$tmp_name_folder = machine_name(microtime());
+$base_folder_path = '/tmp/autoweb_tmp_' . $tmp_name_folder;
+mkdir($base_folder_path);
+
+// Arquivo info
+$arquivo_info = $base_folder_path . '/' . $module_machine_name . '.info';
+$fp = fopen($arquivo_info, 'w');
+fwrite($fp, $module_body);
 
 // Creates a temporary php folder to create and get files
 
