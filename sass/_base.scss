@@ -1,0 +1,36 @@
+@mixin textarea-boxsizing() {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+h1 {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+}
+
+select {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    @include textarea-boxsizing();
+}
+
+form {
+    width: 100%;
+}
+
+#errorbox {
+  border: 1px solid #f00;
+  background-color: #fcc;
+  color: #a00;
+  margin-bottom: 10px;
+}
+
+.inner-content {
+    padding: 10px;
+}

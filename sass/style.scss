@@ -1,0 +1,19 @@
+/* Defaults before javascritp load */
+@import 'screen';
+@import 'base';
+@import 'layout';
+@import 'state';
+#basic_html {
+  display: none;
+}
+#basic_html_2 {
+  display: none;
+}
+#drupal_module {
+  display: none;
+}
+
+.inlineblock {
+  display: inline-block;
+  vertical-align: top;
+}
