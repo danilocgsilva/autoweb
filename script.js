@@ -1,4 +1,4 @@
-var telas = ["basic_html", "basic_html_2", "drupal_module"];
+var telas = ["basic_html", "basic_html_2", "wordpress_plugin", "drupal_module"];
 
 function switchScreen(tela) {
   

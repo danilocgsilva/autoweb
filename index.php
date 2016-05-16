@@ -36,8 +36,8 @@ show_error_if_any();
               <option onclick="javascript:switchScreen('basic_html_2');" value="basic_html_2"
                 <?php if ($page_source == 'basic_html_2') echo 'selected="selected"'; ?>>Basic HTML 2
               </option>
-              <option onclick="javascript:switchScreen();" value="wp_plugin"
-                <?php if ($page_source == 'wp_plugin') echo 'selected="selected"'; ?>>WordPress plugin
+              <option onclick="javascript:switchScreen('wordpress_plugin');" value="wordpress_plugin"
+                <?php if ($page_source == 'wordpress_plugin') echo 'selected="selected"'; ?>>WordPress plugin
               </option>
               <option onclick="javascript:switchScreen('drupal_module');" value="drupal_module"
                 <?php if ($page_source == 'drupal_module') echo 'selected="selected"'; ?>>Drupal Module
@@ -77,6 +77,14 @@ show_error_if_any();
 <?php echo $basic_html_2 ?>
                   </textarea>
                 </form>
+
+            <form
+              <?php if ($page_source == 'wordpress_plugin') echo 'style="display: inline-block"'; ?> id="wordpress_plugin" class="inlineblock" name="wordpress_plugin_download" method="GET" action="includes/wordpress_plugin_download.php">
+              <label for="plugin-php">Basic code for yourplugin.php</label>
+              <textarea id="plugin-php" name="plugin-php" form="wordpress_plugin" rows="13">
+<?php echo $wordpress_plugin_variable; ?>
+              </textarea>
+            </form>
 
             <form
               <?php if ($page_source == 'drupal_module') echo 'style="display: inline-block"'; ?> id="drupal_module" class="inlineblock" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">

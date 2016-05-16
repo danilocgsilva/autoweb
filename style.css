@@ -141,11 +141,16 @@ form {
 }
 
 /* line 12, sass/style.scss */
+#wordpress_plugin {
+  display: none;
+}
+
+/* line 15, sass/style.scss */
 #drupal_module {
   display: none;
 }
 
-/* line 16, sass/style.scss */
+/* line 19, sass/style.scss */
 .inlineblock {
   display: inline-block;
   vertical-align: top;

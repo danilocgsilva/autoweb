@@ -1,6 +1,7 @@
 <?php
 require_once('includes/basic_html_variable.php');
 require_once('includes/basic_html_2_variable.php');
+require_once('includes/wordpress_plugin_variable.php');
 
 // Functions
 function show_error_if_any() {
