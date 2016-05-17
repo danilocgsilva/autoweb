@@ -22,24 +22,24 @@ if (isset($_SESSION['page_source'])) {
     <div id="wrapper">
       <h1>Autoweb</h1>
 
-      <?php
+<?php
 show_error_if_any();
 ?>
 
       <div id="body">
         <div id="left_sidebar">
           <div class="inner-content">
-            <select class="inlineblock" name="selecttask" form="form_download" size="12">
-              <option onclick="javascript:switchScreen('basic_html');" value="basic_html"
+            <select id="selectPanel" class="inlineblock" name="selecttask" form="form_download" size="12">
+              <option value="basic_html"
                 <?php if ($page_source == 'basic_html') echo 'selected="selected"'; ?>>Basic HTML
               </option>
-              <option onclick="javascript:switchScreen('basic_html_2');" value="basic_html_2"
+              <option value="basic_html_2"
                 <?php if ($page_source == 'basic_html_2') echo 'selected="selected"'; ?>>Basic HTML 2
               </option>
-              <option onclick="javascript:switchScreen('wordpress_plugin');" value="wordpress_plugin"
+              <option value="wordpress_plugin"
                 <?php if ($page_source == 'wordpress_plugin') echo 'selected="selected"'; ?>>WordPress plugin
               </option>
-              <option onclick="javascript:switchScreen('drupal_module');" value="drupal_module"
+              <option value="drupal_module"
                 <?php if ($page_source == 'drupal_module') echo 'selected="selected"'; ?>>Drupal Module
               </option>
             </select>
