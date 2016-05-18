@@ -1,6 +1,7 @@
 <?php
 require_once('vars_bootstrap.php');
 require_once('functions/print_input.php');
+require_once('functions/selectview.php');
 session_start();
 
 if (isset($_SESSION['page_source'])) {
@@ -31,18 +32,24 @@ show_error_if_any();
         <div id="left_sidebar">
           <div class="inner-content">
             <select id="selectPanel" class="inlineblock" name="selecttask" form="form_download" size="12">
-              <option value="basic_html"
-                <?php if ($page_source == 'basic_html') echo 'selected="selected"'; ?>>Basic HTML
-              </option>
-              <option value="basic_html_2"
-                <?php if ($page_source == 'basic_html_2') echo 'selected="selected"'; ?>>Basic HTML 2
-              </option>
-              <option value="wordpress_plugin"
-                <?php if ($page_source == 'wordpress_plugin') echo 'selected="selected"'; ?>>WordPress plugin
-              </option>
-              <option value="drupal_module"
-                <?php if ($page_source == 'drupal_module') echo 'selected="selected"'; ?>>Drupal Module
-              </option>
+            <?php
+              $options = array(
+                array(
+                  'machine_name' => "basic_html",
+                  'readable_content' => "Basic HTML"),
+                array(
+                  'machine_name' => "basic_html_2",
+                  'readable_content' => "Basic HTML 2"),
+                array(
+                  'machine_name' => "wordpress_plugin",
+                  'readable_content' => "WordPress plugin"),
+                array(
+                  'machine_name' => "drupal_module",
+                  'readable_content' => "Drupal Module"),    
+              );
+
+              print_selectView_options($options, $page_source);
+            ?>
             </select>
           </div>
           <!-- inner's content end -->
