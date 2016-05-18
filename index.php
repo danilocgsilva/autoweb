@@ -1,5 +1,6 @@
 <?php
 require_once('vars_bootstrap.php');
+require_once('functions/print_input.php');
 session_start();
 
 if (isset($_SESSION['page_source'])) {
@@ -80,6 +81,10 @@ show_error_if_any();
 
             <form
               <?php if ($page_source == 'wordpress_plugin') echo 'style="display: inline-block"'; ?> id="wordpress_plugin" class="inlineblock" name="wordpress_plugin_download" method="GET" action="includes/wordpress_plugin_download.php">
+
+              <?php print_input("wordpress_plugin_name", "text", "Plugin's name", "<br /><br />", true); ?>
+              <?php print_input("wordpress_plugin_description", "text", "Plugin's description", "<br /><br />", true); ?>
+
               <label for="plugin-php">Basic code for yourplugin.php</label>
               <textarea id="plugin-php" name="plugin-php" form="wordpress_plugin" rows="13">
 <?php echo $wordpress_plugin_variable; ?>
@@ -88,8 +93,10 @@ show_error_if_any();
 
             <form
               <?php if ($page_source == 'drupal_module') echo 'style="display: inline-block"'; ?> id="drupal_module" class="inlineblock" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">
+
               <label for="name">Module name: </label>
               <input id="name" name="name" type="text" /><br /><br />
+
               <label for="module_machine_name">(Optional) Machine name:</label>
               <input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
               <div>Module description:</div>

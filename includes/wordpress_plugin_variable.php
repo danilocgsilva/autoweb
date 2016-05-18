@@ -1,9 +1,8 @@
 <?php
 $wordpress_plugin_variable = <<<CODE
-<?php
 /**
- * Plugin Name: %s
- * Description: %s
+ * Plugin Name: %PLUGINNAME%
+ * Description: %PLUGINDESCRIPTION%
  * License: %s
  * Author: %s
  * Author URI: %s
