@@ -3,8 +3,8 @@ $wordpress_plugin_variable = <<<CODE
 /**
  * Plugin Name: %PLUGINNAME%
  * Description: %PLUGINDESCRIPTION%
- * License: %s
- * Author: %s
- * Author URI: %s
+ * License: %PLUGINLICENSE%
+ * Author: %PLUGINAUTHOR%
+ * Author URI: %PLUGINAUTHORURI%
  */
 CODE;
