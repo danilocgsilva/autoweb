@@ -18,6 +18,9 @@ window.onload = function () {
     var wordpress_plugin_description_initial_value = wordpress_plugin_description_element.value;
     var pluginNameEl = document.getElementById("wordpress_plugin_name");
     var pluginDescriptionEl = document.getElementById("wordpress_plugin_description");
+    var pluginLicenseEl = document.getElementById("wordpress_plugin_license");
+    var pluginAuthorNameEl = document.getElementById("wordpress_plugin_author_name");
+    var pluginAuthorUriEl = document.getElementById("wordpress_plugin_author_uri");
 
     updatePHPfile1(wordpress_plugin_description_initial_value);
 
@@ -31,20 +34,32 @@ window.onload = function () {
     pluginDescriptionEl.onkeyup = function () {
         updatePHPfile1(wordpress_plugin_description_initial_value);
     };
+    pluginLicenseEl.onkeyup = function () {
+        updatePHPfile1(wordpress_plugin_description_initial_value);
+    };
+    pluginAuthorNameEl.onkeyup = function () {
+        updatePHPfile1(wordpress_plugin_description_initial_value);
+    };
+    pluginAuthorUriEl.onkeyup = function () {
+        updatePHPfile1(wordpress_plugin_description_initial_value);
+    };
+
 }
 
 function updatePHPfile1(wordpress_plugin_description_initial_value) {
 
     var pluginname = document.getElementById("wordpress_plugin_name").value;
     var plugindescription = document.getElementById("wordpress_plugin_description").value;
-    var pluginlicense = document.getElementById("wordpress_plugin_description")
+    var pluginlicense = document.getElementById("wordpress_plugin_license").value;
+    var pluginauthor = document.getElementById("wordpress_plugin_author_name").value;
+    var pluginauthoruri = document.getElementById("wordpress_plugin_author_uri").value;
 
     var pluginTextAreaElement = document.getElementById("plugin-php");
     var newText = wordpress_plugin_description_initial_value
         .replace('%PLUGINNAME%', pluginname)
         .replace('%PLUGINDESCRIPTION%', plugindescription)
         .replace('%PLUGINLICENSE%', pluginlicense)
-        .replace('PLUGINAUTHOR', pluginahthor)
+        .replace('%PLUGINAUTHOR%', pluginauthor)
         .replace('%PLUGINAUTHORURI%', pluginauthoruri);
 
     pluginTextAreaElement.value = newText;

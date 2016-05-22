@@ -92,7 +92,7 @@ show_error_if_any();
               <?php print_input("wordpress_plugin_name", "text", "Plugin's name", '<br /><br />', true, "(TYPE A NAME)"); ?>
               <?php print_input("wordpress_plugin_description", "text", "Plugin's description", "<br /><br />", true, "(TYPE A DESCRIPTION)"); ?>
               <?php print_input("wordpress_plugin_license", "text", "Plugin's license", "<br /><br />", true, "(TYPE A LICENSE NAME (E.G. GPLV2))"); ?>
-              <?php print_input("wordpress_plugin_author_name", "text", "Plugin's author's name", "<br /><br />", true, "(TYPE THE AUTHOR'S NAME)"); ?>
+              <?php print_input("wordpress_plugin_author_name", "text", "Plugin's author's name", "<br /><br />", true, '(TYPE THE AUTHOR&#39;S NAME)'); ?>
               <?php print_input("wordpress_plugin_author_uri", "text", "Plugin's author's URI", "<br /><br />", true, "(HAVE A SITE?)"); ?>
 
               <label for="plugin-php">Basic code for yourplugin.php</label>
