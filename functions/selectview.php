@@ -1,6 +1,6 @@
 <?php
 /**
-* $array_options: array with another arrays, in the following strincture:
+* $array_options: array with another arrays, in the following structure:
 *   $array['machine_name']: Options machine name
 *   $array['readale_content']: Options human readable content
 * $page_source: the value entered in the variable that indicates page exibition
@@ -12,7 +12,7 @@ function print_selectView_options($array_options, $page_source) {
 
     // Option tag open
     $html_string .= "<option value=\"{$option['machine_name']}\"";
-    if ($page_source == 'basic_html')
+    if ($page_source == $option['machine_name'])
       $html_string .= " selected=\"selected\"";
     $html_string .= ">";
 

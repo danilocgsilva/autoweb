@@ -2,17 +2,9 @@
 @import 'base';
 @import 'layout';
 @import 'state';
-#basic_html {
-  display: none;
-}
-#basic_html_2 {
-  display: none;
-}
-#wordpress_plugin {
-  display: none;
-}
-#drupal_module {
-  display: none;
+
+.switchingForm {
+    display: none;
 }
 
 .inlineblock {

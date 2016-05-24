@@ -5,9 +5,11 @@ function switchScreen(tela) {
 
     for (var i = 0; i < telas.length; i++) {
         if (telas[i] == tela) {
-            document.getElementById(telas[i]).style.display = 'inline-block';
+            //document.getElementById(telas[i]).style.display = 'inline-block';
+            document.getElementById(telas[i]).className = "inlineblock"; 
         } else {
-            document.getElementById(telas[i]).style.display = 'none';
+            //document.getElementById(telas[i]).style.display = 'none';
+            document.getElementById(telas[i]).className = "switchingForm";
         }
     }
 }

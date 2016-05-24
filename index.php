@@ -24,7 +24,7 @@ if (isset($_SESSION['page_source'])) {
     <div id="wrapper">
       <h1>Autoweb</h1>
 
-<?php
+      <?php
 show_error_if_any();
 ?>
 
@@ -32,7 +32,7 @@ show_error_if_any();
         <div id="left_sidebar">
           <div class="inner-content">
             <select id="selectPanel" class="inlineblock" name="selecttask" form="form_download" size="12">
-            <?php
+              <?php
               $options = array(
                 array(
                   'machine_name' => "basic_html",
@@ -46,6 +46,9 @@ show_error_if_any();
                 array(
                   'machine_name' => "drupal_module",
                   'readable_content' => "Drupal Module"),    
+                array(
+                  'machine_name' => "cordova_dev",
+                  'readable_content' => "Cordova"),
               );
 
               print_selectView_options($options, $page_source);
@@ -59,7 +62,7 @@ show_error_if_any();
         <div id="main-content">
           <div class="inner-content">
             <form
-              <?php if ($page_source == 'basic_html') echo 'style="display: inline-block"'; ?> id="basic_html" class="inlineblock" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
+              <?php if ($page_source == 'basic_html'); ?> id="basic_html" class="switchingForm" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
 
               <input type="radio" name="format" value="html" checked="">
                 html
@@ -69,12 +72,12 @@ show_error_if_any();
                   <input type="text" name="name" />
                   <input type="submit" value="Cria" /><br />
                   <textarea rows="12">
-<?php echo $basic_html ?>
+                    <?php echo $basic_html ?>
                   </textarea>
                 </form>
 
             <form
-              <?php if ($page_source == 'basic_html_2') echo 'style="display: inline-block"'; ?> id="basic_html_2" class="inlineblock" name="basic_html_2_download" method="GET" action="includes/basic_html_2_download.php">
+              <?php if ($page_source == 'basic_html_2') echo 'style="display: inline-block"'; ?> id="basic_html_2" class="switchingForm" name="basic_html_2_download" method="GET" action="includes/basic_html_2_download.php">
               <input type="radio" name="format" value="html" checked="">
                 html
                 <input type="radio" name="format" value="php">
@@ -82,12 +85,12 @@ show_error_if_any();
                   <input type="text" name="name" />
                   <input type="submit" value="Cria" /><br />
                   <textarea rows="12">
-<?php echo $basic_html_2 ?>
+                    <?php echo $basic_html_2 ?>
                   </textarea>
                 </form>
 
             <form
-              <?php if ($page_source == 'wordpress_plugin') echo 'style="display: inline-block"'; ?> id="wordpress_plugin" class="inlineblock" name="wordpress_plugin_download" method="GET" action="includes/wordpress_plugin_download.php">
+              <?php if ($page_source == 'wordpress_plugin') echo 'style="display: inline-block"'; ?> id="wordpress_plugin" class="switchingForm" name="wordpress_plugin_download" method="GET" action="includes/wordpress_plugin_download.php">
 
               <?php print_input("wordpress_plugin_name", "text", "Plugin's name", '<br /><br />', true, "(TYPE A NAME)"); ?>
               <?php print_input("wordpress_plugin_description", "text", "Plugin's description", "<br /><br />", true, "(TYPE A DESCRIPTION)"); ?>
@@ -97,12 +100,12 @@ show_error_if_any();
 
               <label for="plugin-php">Basic code for yourplugin.php</label>
               <textarea id="plugin-php" name="plugin-php" form="wordpress_plugin" rows="13">
-<?php echo $wordpress_plugin_variable; ?>
+                <?php echo $wordpress_plugin_variable; ?>
               </textarea>
             </form>
 
             <form
-              <?php if ($page_source == 'drupal_module') echo 'style="display: inline-block"'; ?> id="drupal_module" class="inlineblock" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">
+              <?php if ($page_source == 'drupal_module') echo 'style="display: inline-block"'; ?> id="drupal_module" class="switchingForm" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">
 
               <label for="name">Module name: </label>
               <input id="name" name="name" type="text" /><br /><br />
@@ -112,6 +115,18 @@ show_error_if_any();
               <div>Module description:</div>
               <textarea id="module_description" name="module_description" form="drupal_module" rows="3" cols="61"></textarea><br />
               <input type="submit" value="Downloads" />
+            </form>
+            
+          <form
+              <?php if ($page_source == 'cordova_dev') echo 'style="display: inline-block"'; ?> id="cordova_dev" class="switchingForm" name="cordova_dev">
+
+              <?php print_input("buttonName", "text", "Add Button", '<br /><br />', true, ""); ?>
+            
+              <input id="add_cordova_button" type="button" value="Add Button" />
+            
+            <textarea id="cordova_textarea">
+              
+            </textarea>
             </form>
 
           </div>

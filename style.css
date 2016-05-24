@@ -66,27 +66,12 @@ input[type=text] {
   display: none;
 }
 
-/* line 5, sass/style.scss */
-#basic_html {
+/* line 6, sass/style.scss */
+.switchingForm {
   display: none;
 }
 
-/* line 8, sass/style.scss */
-#basic_html_2 {
-  display: none;
-}
-
-/* line 11, sass/style.scss */
-#wordpress_plugin {
-  display: none;
-}
-
-/* line 14, sass/style.scss */
-#drupal_module {
-  display: none;
-}
-
-/* line 18, sass/style.scss */
+/* line 10, sass/style.scss */
 .inlineblock {
   display: inline-block;
   vertical-align: top;
