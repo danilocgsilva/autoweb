@@ -45,7 +45,7 @@ show_error_if_any();
                   'readable_content' => "WordPress plugin"),
                 array(
                   'machine_name' => "drupal_module",
-                  'readable_content' => "Drupal Module"),    
+                  'readable_content' => "Drupal Module"),
                 array(
                   'machine_name' => "cordova_dev",
                   'readable_content' => "Cordova"),
@@ -60,7 +60,8 @@ show_error_if_any();
         <!-- left-sidebar's end -->
 
         <div id="main-content">
-          <div class="inner-content">
+          <div class="inner-content form_holder">
+
             <form
               <?php if ($page_source == 'basic_html'); ?> id="basic_html" class="switchingForm" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
 
@@ -116,16 +117,16 @@ show_error_if_any();
               <textarea id="module_description" name="module_description" form="drupal_module" rows="3" cols="61"></textarea><br />
               <input type="submit" value="Downloads" />
             </form>
-            
+
           <form
               <?php if ($page_source == 'cordova_dev') echo 'style="display: inline-block"'; ?> id="cordova_dev" class="switchingForm" name="cordova_dev">
 
               <?php print_input("buttonName", "text", "Add Button", '<br /><br />', true, ""); ?>
-            
+
               <input id="add_cordova_button" type="button" value="Add Button" />
-            
+
             <textarea id="cordova_textarea">
-              
+
             </textarea>
             </form>
 

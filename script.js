@@ -1,20 +1,18 @@
+window.onload = function () {
 
-var telas = ["basic_html", "basic_html_2", "wordpress_plugin", "drupal_module"];
+    function switchScreen(tela) {
 
-function switchScreen(tela) {
-
-    for (var i = 0; i < telas.length; i++) {
-        if (telas[i] == tela) {
-            //document.getElementById(telas[i]).style.display = 'inline-block';
-            document.getElementById(telas[i]).className = "inlineblock"; 
-        } else {
-            //document.getElementById(telas[i]).style.display = 'none';
-            document.getElementById(telas[i]).className = "switchingForm";
+        for (var i = 0; i < telas.length; i++) {
+            if (telas[i] == tela) {
+                //document.getElementById(telas[i]).style.display = 'inline-block';
+                document.getElementById(telas[i]).className = "inlineblock";
+            } else {
+                //document.getElementById(telas[i]).style.display = 'none';
+                document.getElementById(telas[i]).className = "switchingForm";
+            }
         }
     }
-}
 
-window.onload = function () {
     var selectPanel = document.getElementById("selectPanel");
     var wordpress_plugin_description_element = document.getElementById("plugin-php");
     var wordpress_plugin_description_initial_value = wordpress_plugin_description_element.value;
@@ -23,6 +21,12 @@ window.onload = function () {
     var pluginLicenseEl = document.getElementById("wordpress_plugin_license");
     var pluginAuthorNameEl = document.getElementById("wordpress_plugin_author_name");
     var pluginAuthorUriEl = document.getElementById("wordpress_plugin_author_uri");
+    var forms_holder = document.querySelector(".inner-content.form_holder");
+    var form_children = forms_holder.children;
+    var telas = [];
+    for (var i = 0; i < form_children.length; i++) {
+      telas.push(form_children[i].id);
+    }
 
     updatePHPfile1(wordpress_plugin_description_initial_value);
 
@@ -66,4 +70,3 @@ function updatePHPfile1(wordpress_plugin_description_initial_value) {
 
     pluginTextAreaElement.value = newText;
 }
-
