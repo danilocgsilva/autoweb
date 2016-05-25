@@ -17,4 +17,3 @@ function print_input($identifier, $type, $label, $breaking, $break_label, $initi
   print ' />' . "\n";
   print $breaking;
 }
- ?>
