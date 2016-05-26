@@ -62,70 +62,11 @@ show_error_if_any();
         <div id="main-content">
           <div class="inner-content form_holder">
 
-            <form
-              <?php if ($page_source == 'basic_html'); ?> id="basic_html" class="switchingForm" name="basic_html_download" method="GET" action="includes/basic_html_download.php">
-
-              <input type="radio" name="format" value="html" checked="">
-                html
-                <input type="radio" name="format" value="php">
-                  php<br />
-
-                  <input type="text" name="name" />
-                  <input type="submit" value="Cria" /><br />
-                  <textarea rows="12">
-                    <?php echo $basic_html ?>
-                  </textarea>
-                </form>
-
-            <form
-              <?php if ($page_source == 'basic_html_2') echo 'style="display: inline-block"'; ?> id="basic_html_2" class="switchingForm" name="basic_html_2_download" method="GET" action="includes/basic_html_2_download.php">
-              <input type="radio" name="format" value="html" checked="">
-                html
-                <input type="radio" name="format" value="php">
-                  php<br />
-                  <input type="text" name="name" />
-                  <input type="submit" value="Cria" /><br />
-                  <textarea rows="12">
-                    <?php echo $basic_html_2 ?>
-                  </textarea>
-                </form>
-
-            <form
-              <?php if ($page_source == 'wordpress_plugin') echo 'style="display: inline-block"'; ?> id="wordpress_plugin" class="switchingForm" name="wordpress_plugin_download" method="GET" action="includes/wordpress_plugin_download.php">
-
-              <?php print_input("wordpress_plugin_name", "text", "Plugin's name", '<br /><br />', true, "(TYPE A NAME)"); ?>
-              <?php print_input("wordpress_plugin_description", "text", "Plugin's description", "<br /><br />", true, "(TYPE A DESCRIPTION)"); ?>
-              <?php print_input("wordpress_plugin_license", "text", "Plugin's license", "<br /><br />", true, "(TYPE A LICENSE NAME (E.G. GPLV2))"); ?>
-              <?php print_input("wordpress_plugin_author_name", "text", "Plugin's author's name", "<br /><br />", true, '(TYPE THE AUTHOR&#39;S NAME)'); ?>
-              <?php print_input("wordpress_plugin_author_uri", "text", "Plugin's author's URI", "<br /><br />", true, "(HAVE A SITE?)"); ?>
-
-              <label for="plugin-php">Basic code for yourplugin.php</label>
-              <textarea id="plugin-php" name="plugin-php" form="wordpress_plugin" rows="13">
-                <?php echo $wordpress_plugin_variable; ?>
-              </textarea>
-            </form>
-
-            <form
-              <?php if ($page_source == 'drupal_module') echo 'style="display: inline-block"'; ?> id="drupal_module" class="switchingForm" name="drupal_module_download" method="GET" action="includes/drupal_module_download.php">
-
-              <label for="name">Module name: </label>
-              <input id="name" name="name" type="text" /><br /><br />
-
-              <label for="module_machine_name">(Optional) Machine name:</label>
-              <input id="module_machine_name" name="module_machine_name" type="text" /><br /><br />
-              <div>Module description:</div>
-              <textarea id="module_description" name="module_description" form="drupal_module" rows="3" cols="61"></textarea><br />
-              <input type="submit" value="Downloads" />
-            </form>
-
-          <form
-              <?php if ($page_source == 'cordova_dev') echo 'style="display: inline-block"'; ?> id="cordova_dev" class="switchingForm" name="cordova_dev">
-
-              <?php print_input("buttonName", "text", "Button Name", '<br /><br />', true, ""); ?>
-              <input id="add_cordova_button" onClick="alert(toId('Agora sim tenho o que'));" type="button" value="Add Button" />
-
-            <textarea id="cordova_textarea"></textarea>
-            </form>
+            <?php require_once('forms/basic_html.php'); ?>
+            <?php require_once('forms/basic_html_2.php'); ?>
+            <?php require_once('forms/wordpress_plugin.php'); ?>
+            <?php require_once('forms/drupal_module.php'); ?>
+            <?php require_once('forms/cordova_dev.php'); ?>
 
           </div>
           <!-- inner's conent end -->

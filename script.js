@@ -1,7 +1,11 @@
 function toId(name) {
   var nameParts = name.split(" ");
   var idNamed = "";
+  
+  // To follow javascript convesion, the first character mus be lowercase
   nameParts[0] = nameParts[0].charAt(0).toLowerCase() + nameParts[0].slice(1);
+  
+  
   for (var i = 1; i < nameParts.length; i++) {
     nameParts[i] = nameParts[i].charAt(0).toUpperCase() + nameParts[i].slice(1);
   }
