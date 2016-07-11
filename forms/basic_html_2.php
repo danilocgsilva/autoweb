@@ -7,6 +7,6 @@
       <input type="text" name="name" />
       <input type="submit" value="Cria" /><br />
       <textarea rows="12">
-        <?php echo $basic_html_2 ?>
+<?php echo $basic_html_2 ?>
       </textarea>
     </form>
